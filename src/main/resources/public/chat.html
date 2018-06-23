@@ -36,6 +36,7 @@ $("#input-msg").on('keypress',function(){
 });
 
 $("#send-button").click(function(){
+    var host = "http://"+window.location.host+"/chat";
     var input = $("#input-msg");
     var v = input.val();
     if(v==""){
@@ -48,7 +49,7 @@ $("#send-button").click(function(){
     scrollToEnd();
     $.ajax({
     	  	         type: "GET",
-    	  	         url:"http://localhost/chat",
+    	  	         url: host,
     	  	         data:input.serialize(),
     	  	         success: function(response) {
 
